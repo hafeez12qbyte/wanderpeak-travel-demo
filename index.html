@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderpeak Travel — Small-Group Trips & Custom Journeys | Denver, CO</title>
+<meta name="description" content="Wanderpeak Travel plans small-group trips and custom journeys worldwide: transparent per-person prices, local expert guides, flexible cancellation. Search trips and plan yours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ocean:#0c2d3e; --ocean-2:#11455f; --coral:#ff6b4a; --coral-d:#e5502f;
+  --sky:#e8f2f5; --sand:#faf6ef; --bg:#fbfcfc; --card:#ffffff; --line:#dce7ea;
+  --text:#3c4a50; --muted:#6b7a80; --amber:#f2a93b;
+  --r:18px; --r-s:11px;
+  --shadow:0 18px 42px rgba(12,45,62,.16); --shadow-s:0 6px 18px rgba(12,45,62,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Karla',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+h1,h2{font-family:'Fraunces',serif;color:var(--ocean);line-height:1.12;font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(38px,5.4vw,60px)}
+h2{font-size:clamp(29px,4vw,42px)}
+h3{font-family:'Fraunces',serif;font-size:20.5px;font-weight:600;color:var(--ocean);line-height:1.25}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--coral-d);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 27px;border-radius:999px;font-weight:700;font-size:15.5px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:all .16s ease;font-family:inherit}
+.btn:active{transform:translateY(1px)}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 10px 24px rgba(255,107,74,.35)}
+.btn-coral:hover{background:var(--coral-d)}
+.btn-line{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(12,45,62,.25)}
+.btn-line:hover{border-color:#fff}
+.btn-dark{border-color:var(--line);color:var(--ocean);background:#fff}
+.btn-dark:hover{border-color:var(--ocean)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+
+.topbar{background:var(--ocean);color:#bcd2db;font-size:13.5px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.topbar a{color:#ffd9a8;text-decoration:none;font-weight:700}
+
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);transition:box-shadow .2s}
+header.site.scrolled{box-shadow:var(--shadow-s)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:40px;height:40px;border-radius:12px;background:var(--ocean);display:grid;place-items:center;flex:none}
+.logo-name{font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--ocean);line-height:1}
+.logo-name span{color:var(--coral-d)}
+.logo-sub{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:15.5px;color:var(--ocean)}
+.nav-links a:hover{color:var(--coral-d)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:3px;background:var(--ocean);margin:5px 0;border-radius:2px}
+
+.hero{position:relative;color:#fff}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,45,62,.38) 0%,rgba(12,45,62,.18) 42%,rgba(12,45,62,.62) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:88px;padding-bottom:56px;text-align:center}
+.hero h1{color:#fff;max-width:16em;margin:0 auto}
+.hero h1 em{font-style:italic;color:#ffd9a8}
+.hero p.lede{font-size:19px;color:#eef6f8;max-width:38em;margin:20px auto 0}
+.hero .stars{color:var(--amber);letter-spacing:3px;margin-top:18px;font-size:15px}
+.hero .rating-line{font-size:14.5px;color:#dcebf0;font-weight:600}
+
+.searchbar{background:#fff;border-radius:18px;box-shadow:var(--shadow);max-width:920px;margin:34px auto 0;padding:14px;display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr auto;gap:10px;text-align:left}
+.searchbar .sg label{display:block;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:2px 0 3px 12px}
+.searchbar select{width:100%;border:0;background:var(--sky);border-radius:var(--r-s);padding:11px 12px;font-family:inherit;font-size:15.5px;font-weight:600;color:var(--ocean);cursor:pointer}
+.searchbar .btn{align-self:end;justify-content:center}
+.search-note{max-width:920px;margin:14px auto 0;font-size:14.5px;color:#ffe9d6;font-weight:600;min-height:1.4em}
+
+.stats{background:var(--ocean);color:#cfe0e7}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-top:30px;padding-bottom:30px;text-align:center}
+.stat .n{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:#fff}
+.stat .n em{font-style:normal;color:var(--coral)}
+.stat .l{font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:#93aeba}
+
+section.block{padding:78px 0}
+.sec-head{max-width:640px;margin-bottom:40px}
+.sec-head p{color:var(--muted);margin-top:10px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+.trips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.trip{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.trip:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.trip.hide{display:none}
+.trip-media{position:relative}
+.trip-media img{width:100%;aspect-ratio:16/10.5;object-fit:cover}
+.trip-badge{position:absolute;top:13px;left:13px;background:rgba(12,45,62,.85);color:#fff;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px}
+.trip-save{position:absolute;top:13px;right:13px;background:var(--coral);color:#fff;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:999px}
+.trip-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.trip-body .region{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-d)}
+.trip-body h3{margin:6px 0 4px}
+.trip-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted);font-weight:600;margin:8px 0 12px}
+.trip-meta .stars{color:var(--amber);letter-spacing:1px}
+.trip-body p{font-size:15px;color:var(--muted)}
+.trip-foot{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line)}
+.trip-price .from{font-size:12.5px;color:var(--muted);font-weight:600;display:block;line-height:1.2}
+.trip-price .amt{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--ocean)}
+.trip-price .pp{font-size:13px;color:var(--muted)}
+.no-results{display:none;background:var(--sky);border-radius:var(--r);padding:30px;text-align:center;color:var(--ocean);font-weight:600}
+.no-results.show{display:block}
+
+.why{background:var(--sand)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.why-card{background:#fff;border:1px solid #eadfce;border-radius:var(--r);padding:27px 24px}
+.why-icon{width:50px;height:50px;border-radius:14px;background:var(--sky);display:grid;place-items:center;margin-bottom:14px}
+.why-card p{color:var(--muted);font-size:15px;margin-top:6px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;background:#fff}
+.step .n{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--coral-d)}
+.step p{color:var(--muted);font-size:15px;margin-top:6px}
+
+.reviews{background:var(--ocean)}
+.reviews h2{color:#fff}
+.reviews .eyebrow{color:#ffb59d}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--ocean-2);border:1px solid #1d5a77;border-radius:var(--r);padding:27px 25px;color:#dcebf0}
+.rev .stars{color:var(--amber);letter-spacing:2px;margin-bottom:11px}
+.rev p{font-size:15.5px}
+.rev .who{margin-top:16px;font-weight:800;color:#fff;font-size:14.5px}
+.rev .meta{font-size:13px;color:#93aeba}
+
+.plan .wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:start}
+.plan-points{list-style:none;margin-top:22px;display:grid;gap:13px}
+.plan-points li{display:flex;gap:11px;align-items:flex-start;font-weight:600;color:var(--ocean)}
+.plan-points li svg{flex:none;margin-top:4px}
+form.pl{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+form.pl h3{font-size:24px;margin-bottom:4px}
+form.pl .f-sub{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f-group{margin-bottom:14px}
+.f-group label{display:block;font-weight:700;font-size:14px;color:var(--ocean);margin-bottom:6px}
+.f-group input,.f-group select,.f-group textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r-s);font-family:inherit;font-size:15.5px;background:#fff;color:var(--text)}
+.f-group textarea{resize:vertical;min-height:74px}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--coral);outline:none;box-shadow:0 0 0 3px rgba(255,107,74,.18)}
+form.pl .btn{width:100%;justify-content:center}
+.form-ok{display:none;background:#e9f7ee;border:1px solid #bfe3cd;color:#14532d;border-radius:var(--r-s);padding:14px 16px;font-weight:600;margin-top:16px;font-size:15px}
+.form-ok.show{display:block}
+
+footer{background:var(--ocean);color:#93aeba;padding:54px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:40px}
+footer h4{color:#fff;font-family:'Fraunces',serif;font-size:17px;margin-bottom:13px;font-weight:600}
+footer ul{list-style:none;display:grid;gap:9px;font-size:14.5px}
+footer a{color:#93aeba;text-decoration:none}
+footer a:hover{color:#ffd9a8}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding:17px 0;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.demo-note{color:#5f7d89}
+
+.callbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ocean);padding:10px 14px;gap:10px}
+.callbar a{flex:1;text-align:center;padding:13px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15.5px}
+.callbar .cb-call{background:#fff;color:var(--ocean)}
+.callbar .cb-book{background:var(--coral);color:#fff}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:1020px){.trips-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}.searchbar{grid-template-columns:1fr 1fr}.searchbar .btn{grid-column:1/-1}}
+@media(max-width:860px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 22px 16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-s)}
+  .nav-links.open{display:flex}
+  .nav-links li{padding:9px 0;border-bottom:1px solid var(--sky)}
+  .burger{display:block}
+  .plan .wrap{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .callbar{display:flex}
+  body{padding-bottom:64px}
+}
+@media(max-width:560px){.trips-grid,.rev-grid,.why-grid,.steps{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.searchbar{grid-template-columns:1fr}section.block{padding:56px 0}.hero .wrap{padding-top:64px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>1624 Market Street, Denver, CO · Est. 2012</span>
+    <span>Talk to a travel designer: <a href="tel:+13035550194">(303) 555-0194</a></span>
+  </div>
+</div>
+
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <span class="logo-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 19 6.5-11L13 14l2.5-4L21 19H3Z"/><circle cx="17.5" cy="5.5" r="1.6" fill="#ff6b4a" stroke="none"/></svg></span>
+      <span><span class="logo-name">Wander<span>peak</span></span><br><span class="logo-sub">Travel Co.</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#trips">Trips</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+    <a class="btn btn-coral" href="#plan" style="padding:11px 22px">Plan My Trip</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-bg"><img src="santorini.jpg" alt="Santorini, Greece at golden hour"></div>
+  <div class="wrap">
+    <h1>Trips worth <em>telling stories</em> about</h1>
+    <p class="lede">Small-group journeys and custom trips designed by people who've actually been there — with honest prices, local guides, and none of the planning headache.</p>
+    <div class="stars" aria-hidden="true">★★★★★</div>
+    <p class="rating-line">4.9 from 3,100+ travelers · Flexible cancellation on every trip</p>
+
+    <form class="searchbar" id="tripSearch">
+      <div class="sg"><label for="sRegion">Where to?</label>
+        <select id="sRegion">
+          <option value="any">Anywhere</option>
+          <option value="europe">Europe</option>
+          <option value="asia">Asia</option>
+          <option value="africa">Africa</option>
+          <option value="islands">Island escapes</option>
+        </select>
+      </div>
+      <div class="sg"><label for="sMonth">When?</label>
+        <select id="sMonth">
+          <option value="any">Any month</option>
+          <option>Spring 2026</option>
+          <option>Summer 2026</option>
+          <option>Fall 2026</option>
+          <option>Winter 2026</option>
+        </select>
+      </div>
+      <div class="sg"><label for="sWho">Travelers</label>
+        <select id="sWho">
+          <option>2 travelers</option>
+          <option>1 traveler</option>
+          <option>3–4 travelers</option>
+          <option>5+ / group</option>
+        </select>
+      </div>
+      <div class="sg"><label for="sBudget">Max budget</label>
+        <select id="sBudget">
+          <option value="any">No limit</option>
+          <option value="2500">Up to $2,500</option>
+          <option value="3500">Up to $3,500</option>
+          <option value="5000">Up to $5,000</option>
+        </select>
+      </div>
+      <button class="btn btn-coral" type="submit">Search Trips</button>
+    </form>
+    <p class="search-note" id="searchNote" role="status"></p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="n">60<em>+</em></div><div class="l">Destinations</div></div>
+    <div class="stat"><div class="n">18k<em>+</em></div><div class="l">Happy travelers</div></div>
+    <div class="stat"><div class="n">14<em>yrs</em></div><div class="l">Designing trips</div></div>
+    <div class="stat"><div class="n">4.9<em>★</em></div><div class="l">Average rating</div></div>
+  </div>
+</div>
+
+<section class="block" id="trips">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Featured Trips</p>
+      <h2>This season's most-loved journeys</h2>
+      <p>Every price is per person and includes stays, local guides, transfers and the experiences listed — no surprise fees at checkout.</p>
+    </div>
+    <div class="trips-grid" id="tripsGrid">
+      <article class="trip reveal" data-region="europe" data-price="2499">
+        <div class="trip-media"><img src="santorini.jpg" alt="Santorini and the Aegean Sea, Greece"><span class="trip-badge">Small group · max 12</span><span class="trip-save">Save $300</span></div>
+        <div class="trip-body">
+          <span class="region">Europe · Greece</span>
+          <h3>Greek Island Hopping</h3>
+          <div class="trip-meta"><span>8 days</span><span class="stars">★★★★★</span><span>4.9 (412)</span></div>
+          <p>Athens, Mykonos and Santorini with a local guide, sunset catamaran cruise and a family-run taverna dinner you'll talk about for years.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><span class="from">From</span><span class="amt">$2,499</span> <span class="pp">/ person</span></div>
+            <button class="btn btn-dark plan-btn" data-dest="Greek Island Hopping" style="padding:10px 19px">Plan This Trip</button>
+          </div>
+        </div>
+      </article>
+      <article class="trip reveal" data-region="islands" data-price="3899">
+        <div class="trip-media"><img src="maldives.jpg" alt="Overwater villas in the Maldives"><span class="trip-badge">Honeymoon favorite</span></div>
+        <div class="trip-body">
+          <span class="region">Island Escapes · Maldives</span>
+          <h3>Maldives Overwater Escape</h3>
+          <div class="trip-meta"><span>6 days</span><span class="stars">★★★★★</span><span>5.0 (268)</span></div>
+          <p>Five nights in an overwater villa, seaplane transfers, a private sandbank picnic and snorkeling with turtles at sunrise.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><span class="from">From</span><span class="amt">$3,899</span> <span class="pp">/ person</span></div>
+            <button class="btn btn-dark plan-btn" data-dest="Maldives Overwater Escape" style="padding:10px 19px">Plan This Trip</button>
+          </div>
+        </div>
+      </article>
+      <article class="trip reveal" data-region="europe" data-price="2899">
+        <div class="trip-media"><img src="alps.jpg" alt="A panoramic train crossing the Swiss Alps"><span class="trip-badge">Rail journey</span></div>
+        <div class="trip-body">
+          <span class="region">Europe · Switzerland</span>
+          <h3>Swiss Alps by Rail</h3>
+          <div class="trip-meta"><span>7 days</span><span class="stars">★★★★★</span><span>4.8 (356)</span></div>
+          <p>Zurich to Zermatt on the Glacier Express, lake cruises, a cable car to the Matterhorn viewpoint and fondue in a mountain village.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><span class="from">From</span><span class="amt">$2,899</span> <span class="pp">/ person</span></div>
+            <button class="btn btn-dark plan-btn" data-dest="Swiss Alps by Rail" style="padding:10px 19px">Plan This Trip</button>
+          </div>
+        </div>
+      </article>
+      <article class="trip reveal" data-region="asia" data-price="3299">
+        <div class="trip-media"><img src="kyoto.jpg" alt="A historic street in Kyoto, Japan"><span class="trip-badge">Small group · max 10</span><span class="trip-save">Save $250</span></div>
+        <div class="trip-body">
+          <span class="region">Asia · Japan</span>
+          <h3>Kyoto &amp; Ancient Japan</h3>
+          <div class="trip-meta"><span>10 days</span><span class="stars">★★★★★</span><span>4.9 (503)</span></div>
+          <p>Tokyo's energy, Kyoto's temples, a tea ceremony with a Kyoto tea master, bullet trains and a night in a traditional ryokan.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><span class="from">From</span><span class="amt">$3,299</span> <span class="pp">/ person</span></div>
+            <button class="btn btn-dark plan-btn" data-dest="Kyoto & Ancient Japan" style="padding:10px 19px">Plan This Trip</button>
+          </div>
+        </div>
+      </article>
+      <article class="trip reveal" data-region="africa" data-price="4599">
+        <div class="trip-media"><img src="safari.jpg" alt="Elephants on the savanna in Tanzania"><span class="trip-badge">Once in a lifetime</span></div>
+        <div class="trip-body">
+          <span class="region">Africa · Tanzania</span>
+          <h3>Serengeti Safari</h3>
+          <div class="trip-meta"><span>9 days</span><span class="stars">★★★★★</span><span>5.0 (189)</span></div>
+          <p>Game drives in the Serengeti and Ngorongoro Crater with expert trackers, luxury tented camps and Kilimanjaro views at dawn.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><span class="from">From</span><span class="amt">$4,599</span> <span class="pp">/ person</span></div>
+            <button class="btn btn-dark plan-btn" data-dest="Serengeti Safari" style="padding:10px 19px">Plan This Trip</button>
+          </div>
+        </div>
+      </article>
+      <article class="trip reveal" data-region="islands" data-price="2199">
+        <div class="trip-media"><img src="maldives.jpg" alt="Turquoise lagoon and white sand beach"><span class="trip-badge">Best value</span></div>
+        <div class="trip-body">
+          <span class="region">Island Escapes · Indian Ocean</span>
+          <h3>Island Hopping Lite</h3>
+          <div class="trip-meta"><span>5 days</span><span class="stars">★★★★★</span><span>4.8 (297)</span></div>
+          <p>A shorter, lighter escape: boutique beach hotels on two local islands, reef snorkeling, dolphin cruise and a beach barbecue night.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><span class="from">From</span><span class="amt">$2,199</span> <span class="pp">/ person</span></div>
+            <button class="btn btn-dark plan-btn" data-dest="Island Hopping Lite" style="padding:10px 19px">Plan This Trip</button>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="no-results" id="noResults">No featured trips match that search — but we design custom trips anywhere. <a href="#plan" style="color:var(--coral-d);font-weight:800">Tell us where you want to go →</a></div>
+  </div>
+</section>
+
+<section class="block why" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why Wanderpeak</p>
+      <h2>All of the wonder, none of the spreadsheet</h2>
+    </div>
+    <div class="why-grid">
+      <article class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#11455f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.5 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21Z" transform="scale(0.92) translate(1,0)"/><path d="M12 3.5c-4 4.5-6 7.7-6 10.6A6 6 0 0 0 12 20a6 6 0 0 0 6-6.4c0-2.9-2-6.1-6-10.1Z" opacity="0"/><circle cx="12" cy="10.5" r="2.6"/></svg></div>
+        <h3>Local experts, not call centers</h3>
+        <p>Every trip is designed with guides who live there — the taverna owner, the safari tracker, the tea master.</p>
+      </article>
+      <article class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#11455f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 7.5c0-1.4 2.2-2.5 5-2.5s5 1.1 5 2.5-2 2.3-5 2.8-5 1.3-5 3.2 2.2 2.5 5 2.5 5-1.1 5-2.5"/></svg></div>
+        <h3>One honest price</h3>
+        <p>Stays, guides, transfers and experiences included in the number you see. The price we quote is the price you pay.</p>
+      </article>
+      <article class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#11455f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 2.6-6.3"/><path d="M3 4v5h5"/></svg></div>
+        <h3>Flexible cancellation</h3>
+        <p>Plans change. Cancel up to 30 days before departure for a full refund — no forms, no phone calls, no hard feelings.</p>
+      </article>
+      <article class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#11455f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg></div>
+        <h3>24/7 on-trip support</h3>
+        <p>Missed train? Lost passport? A real Wanderpeak human answers in minutes, any hour, anywhere in the world.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How It Works</p>
+      <h2>From daydream to departure in three steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Tell us the dream</h3><p>Pick a featured trip or describe your own — two minutes on the form below, no commitment.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Get a designed itinerary</h3><p>Within 48 hours a travel designer sends a day-by-day plan with one total price. Tweak it together until it's yours.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Pack a bag</h3><p>We book everything and send one simple itinerary app. You just show up — we handle the rest, 24/7.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Traveler Reviews</p>
+      <h2>4.9 from 3,100+ travelers</h2>
+      <p style="color:#93aeba">Sample reviews shown in the style of our Google and Trustpilot profiles.</p>
+    </div>
+    <div class="rev-grid">
+      <article class="rev reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>"The Greece trip was flawless — our guide Maria knew every island like family. The price we were quoted in March was the price we paid in June. Unheard of."</p><div class="who">Daniel &amp; Priya K.</div><div class="meta">Greek Island Hopping · June 2026</div></article>
+      <article class="rev reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>"I described a vague dream ('Japan, but quiet') and got back a day-by-day plan better than anything I could have researched in a month. The ryokan night alone was worth it."</p><div class="who">Melissa T.</div><div class="meta">Kyoto &amp; Ancient Japan · April 2026</div></article>
+      <article class="rev reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>"Our flight home got cancelled mid-safari. Wanderpeak had us rebooked and in a lodge before we'd even finished breakfast. That's when you learn what you paid for."</p><div class="who">The Okafor Family</div><div class="meta">Serengeti Safari · August 2026</div></article>
+    </div>
+  </div>
+</section>
+
+<section class="block plan" id="plan">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Plan My Trip</p>
+      <h2>Tell us where — we'll design the how</h2>
+      <p style="color:var(--muted);margin-top:12px">Two minutes now, a designed itinerary in your inbox within 48 hours. No payment, no obligation — just a plan worth getting excited about.</p>
+      <ul class="plan-points">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e5502f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free itinerary design — pay only when you book</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e5502f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> One total price, everything included</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e5502f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Full refund up to 30 days before departure</li>
+      </ul>
+    </div>
+    <form class="pl reveal" id="plForm" novalidate>
+      <h3>Start your trip plan</h3>
+      <p class="f-sub">We reply within one business day with first ideas.</p>
+      <div class="f-row">
+        <div class="f-group"><label for="pName">Your name</label><input id="pName" type="text" placeholder="Jordan Miller" required></div>
+        <div class="f-group"><label for="pEmail">Email</label><input id="pEmail" type="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label for="pDest">Destination</label>
+          <select id="pDest" required>
+            <option value="">Choose or pick "Surprise me"…</option>
+            <option>Greek Island Hopping</option>
+            <option>Maldives Overwater Escape</option>
+            <option>Swiss Alps by Rail</option>
+            <option>Kyoto &amp; Ancient Japan</option>
+            <option>Serengeti Safari</option>
+            <option>Island Hopping Lite</option>
+            <option>Somewhere else / Surprise me</option>
+          </select>
+        </div>
+        <div class="f-group"><label for="pWhen">Travel month</label>
+          <select id="pWhen" required>
+            <option value="">Choose…</option>
+            <option>Spring 2026</option>
+            <option>Summer 2026</option>
+            <option>Fall 2026</option>
+            <option>Winter 2026</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label for="pBudget">Budget per person</label>
+          <select id="pBudget">
+            <option>Under $2,500</option>
+            <option selected>$2,500 – $4,000</option>
+            <option>$4,000 – $6,000</option>
+            <option>$6,000+</option>
+          </select>
+        </div>
+        <div class="f-group"><label for="pWho">Travelers</label>
+          <select id="pWho">
+            <option>2 travelers</option>
+            <option>1 traveler</option>
+            <option>3–4 travelers</option>
+            <option>5+ / group</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-group"><label for="pMsg">Anything we should know? <span style="color:var(--muted);font-weight:500">(optional)</span></label><textarea id="pMsg" placeholder="Honeymoon, love food, hate early mornings, want one wow moment…"></textarea></div>
+      <button class="btn btn-coral" type="submit">Send My Trip Request</button>
+      <div class="form-ok" id="formOk" role="status">Request received — a travel designer will reply within one business day with first ideas for your trip. Check your inbox soon.</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Wanderpeak Travel Co.</h4>
+        <p style="font-size:14.5px;max-width:30em">Small-group trips and custom journeys, designed in Denver and led by local experts in 60+ destinations worldwide.</p>
+      </div>
+      <div>
+        <h4>Trips</h4>
+        <ul><li><a href="#trips">Greek Island Hopping</a></li><li><a href="#trips">Maldives Escape</a></li><li><a href="#trips">Swiss Alps by Rail</a></li><li><a href="#trips">Kyoto &amp; Japan</a></li><li><a href="#trips">Serengeti Safari</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#why">Why Wanderpeak</a></li><li><a href="#how">How it works</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#plan">Plan my trip</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+13035550194">(303) 555-0194</a></li><li>1624 Market Street</li><li>Denver, CO 80202</li><li>Mon–Sat, 9 AM – 7 PM MT</li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Wanderpeak Travel Co. All rights reserved.</span>
+      <span class="demo-note">Concept website designed &amp; built by Hafeez Shoukat as a portfolio demonstration.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+13035550194">Call Us</a>
+  <a class="cb-book" href="#plan">Plan My Trip</a>
+</div>
+
+<script>
+(function(){
+  var header=document.getElementById('siteHeader');
+  window.addEventListener('scroll',function(){header.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+  var burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');burger.setAttribute('aria-expanded','false');}});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.trip'));
+  var note=document.getElementById('searchNote'),noRes=document.getElementById('noResults');
+  document.getElementById('tripSearch').addEventListener('submit',function(e){
+    e.preventDefault();
+    var region=document.getElementById('sRegion').value,
+        budget=document.getElementById('sBudget').value,
+        month=document.getElementById('sMonth').value,
+        shown=0;
+    cards.forEach(function(c){
+      var okR=(region==='any'||c.getAttribute('data-region')===region),
+          okB=(budget==='any'||parseInt(c.getAttribute('data-price'),10)<=parseInt(budget,10));
+      var show=okR&&okB;
+      c.classList.toggle('hide',!show);
+      if(show){shown++;c.classList.add('in');}
+    });
+    noRes.classList.toggle('show',shown===0);
+    var regionName=document.getElementById('sRegion').options[document.getElementById('sRegion').selectedIndex].text;
+    note.textContent=shown===0?'':('Showing '+shown+' trip'+(shown===1?'':'s')+(region!=='any'?(' in '+regionName):'')+(month!=='any'?(' · departing '+month):'')+' — scroll down to explore.');
+    document.getElementById('trips').scrollIntoView({behavior:'smooth'});
+  });
+
+  document.querySelectorAll('.plan-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var dest=b.getAttribute('data-dest'),sel=document.getElementById('pDest');
+      for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===dest){sel.selectedIndex=i;break;}}
+      document.getElementById('plan').scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  var form=document.getElementById('plForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ids=['pName','pEmail','pDest','pWhen'],valid=true;
+    ids.forEach(function(id){var f=document.getElementById(id);if(!f.value.trim()){valid=false;f.style.borderColor='#c0392b';}else{f.style.borderColor='';}});
+    if(!valid)return;
+    document.getElementById('formOk').classList.add('show');
+    form.querySelector('button[type=submit]').textContent='Request Sent ✓';
+  });
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
